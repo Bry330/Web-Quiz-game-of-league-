@@ -1,0 +1,43 @@
+.body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    padding: 50px;
+    text-align: center;
+    border: solid;
+    border-radius: 20px;
+    background-image: url(images/Back.jpg);
+    background-attachment: fixed;
+}
+
+h1 {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: rgb(238, 215, 88);
+    text-shadow: 1px 1px 2px  black;
+}
+
+.questions p {
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px  black;
+}
+
+button {
+border: none;
+border-radius: 20px;
+box-shadow: 2px 2px 2px;
+background-color: white;
+}
+
+button:hover{
+    background-color: blueviolet;
+}
+
+input {
+    background-color: antiquewhite;
+    border-radius: 20px;
+}

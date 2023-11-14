@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Quiz Game</title>
+</head>
+
+<body onload="startTimer()">
+    <div class="container">
+
+        <div>
+            <img src="images/logo.png" width="290px" alt="">
+        </div>
+
+        <h1 id="titul">Time:</h1>
+
+        <h1 id="contar">30</h1>
+
+        <div class="questions">
+            <p>1st - He thinks he's a doctor, but he really isn't</p>
+            <input id="res1" type="text">
+            <p>2nd - ¿Who shot " VI " in the 2016 promocion trailer?</p><!-- whas jhin -->
+            <input id="res2" type="text">
+            <p>3rd - ¿What GangPlank stole from swain?</p><!-- His ship or Leviathan -->
+            <input id="res3" type="text">
+            <p>4th - ¿Who is the only magician that Galio likes?</p><!-- lux -->
+            <input id="res4" type="text">
+            <p>5th - ¿Who defended Aureion Sol from the fury of the phateon war aspect?</p><!-- Zoe -->
+            <input id="res5" type="text"><br>
+        </div>
+
+        <br>
+        <button id="btn" onclick="finished()">Finish</button>
+        <button id="btn" onclick="restart()">Restart</button>
+
+
+        <footer>
+            <p id="futer"> <img src="images/PP.png" alt="" width="10px"> Made by Wama <img src="images/PP.png" alt="" width="10px">
+            </p>
+        </footer>
+        <script>
+
+            let finishedTime;
+            let timerInterval;
+
+            function startTimer() {
+                finishedTime = setTimeout(completedTime, 1000 * 70);
+                timerInterval = setInterval(ticTac, 1000);
+
+                document.getElementById('contar').textContent = 70;
+            }
+
+            function ticTac() {
+                let time = document.getElementById('contar').textContent
+
+                document.getElementById('contar').textContent = time - 1;
+            }
+
+            function completedTime() {
+                clearInterval(timerInterval);
+
+                document.getElementById('contar').textContent = 0;
+                alert('Game Over');
+            }
+
+            function finished() {
+                clearTimeout(finishedTime);
+                clearTimeout(timerInterval);
+
+                let date = new Date();
+
+                let todayDate = date.toLocaleDateString("es-ES");
+
+                let response1 = document.getElementById('res1').value
+                let response2 = document.getElementById('res2').value
+                let response3 = document.getElementById('res3').value
+                let response4 = document.getElementById('res4').value
+                let response5 = document.getElementById('res5').value
+
+                let Mesage = date.toDateString("es - Es") +
+                    "\n" +
+                    "1 - " + response1 + "\n" +
+                    "2 - " + response2 + "\n" +
+                    "3 - " + response3 + "\n" +
+                    "4 - " + response4 + "\n" +
+                    "5 - " + response5;
+
+                alert(Mesage);
+
+                if (response1 !== "mundo") {
+                    alert('1 - ❌');
+                } else {
+                    alert ("1 - ✅")
+                }
+
+                if (response2 !== "jhin") {
+                    alert('2 - ❌');
+                } else {
+                    alert ("2 - ✅")
+                }
+
+                if (response3 !== "ship") {
+                    alert('3 - ❌');
+                } else {
+                    alert ("3 - ✅")
+                }
+
+                if (response4 !== "lux") {
+                    alert('4 - ❌');
+                } else {
+                    alert ("4 - ✅")
+                }
+
+                if (response5 !== "zoe") {
+                    alert('5 - ❌');
+                } else {
+                    alert ("5 - ✅")
+                }
+            }
+
+            function restart() {  //This function make the game to reload
+                location.reload()
+            }
+
+        </script>
+    </div>
+</body>
+
+</html>
